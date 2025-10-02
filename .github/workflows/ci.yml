@@ -21,6 +21,7 @@ jobs:
     - name: Test EESSI
       run: |
         ml HDF5/1.14.3-gompi-2023b HDF5/1.14.3-gompi-2023b CMake/3.27.6-GCCcore-13.2.0
+        mkdir build
         cd build
         cmake ..
         make
