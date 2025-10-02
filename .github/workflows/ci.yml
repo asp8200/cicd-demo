@@ -25,4 +25,6 @@ jobs:
         cd build
         cmake ..
         make
+        mpirun -np 4 ./hello_mpi_hdf5
+        ./verify_hdf5
       shell: bash
