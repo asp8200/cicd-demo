@@ -20,7 +20,7 @@ jobs:
     - uses: eessi/github-action-eessi@v3
     - name: Test EESSI
       run: |
-        ml HDF5/1.14.3-gompi-2023b HDF5/1.14.3-gompi-2023b CMake/3.27.6-GCCcore-13.2.0
+        ml buildenv/default-foss-2023b OpenMPI/4.1.6-GCC-13.2.0 HDF5/1.14.3-gompi-2023b CMake/3.27.6-GCCcore-13.2.0
         mkdir build
         cd build
         cmake ..
