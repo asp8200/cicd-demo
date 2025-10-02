@@ -20,5 +20,8 @@ jobs:
     - uses: eessi/github-action-eessi@v3
     - name: Test EESSI
       run: |
-        module avail
+        ml HDF5/1.14.3-gompi-2023b HDF5/1.14.3-gompi-2023b CMake/3.27.6-GCCcore-13.2.0
+        cd build
+        cmake ..
+        make
       shell: bash
