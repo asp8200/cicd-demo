@@ -1,0 +1,40 @@
+easyblock = 'CMakeMake'
+
+name = 'cicd-demo'
+version = '%(software_commit)s'
+
+#versionsuffix = '-amd'
+
+homepage = 'https://www.domain.org'
+description = """
+Description in 80 chars long column
+"""
+
+toolchain = {'name': 'gompi', 'version': '2023b'}
+
+source_urls = ['https://github.com/asp8200/cicd-demo/archive']
+sources = ['%(software_commit)s.tar.gz']
+
+builddependencies = [
+    ('CMake', '3.27.6'),
+]
+
+dependencies = [
+    ('OpenMPI', '4.1.6'),
+    ('HDF5', '1.14.3')
+]
+
+runtest = True
+
+sanity_check_paths = {
+    'files': ['bin/hello_mpi_hdf5', 'bin/verify_hdf5'],
+    'dirs': [''],
+}
+
+
+# sanity_check_commands = [
+#    "%(namelower)s -v",
+#    "%(namelower)s -h 2>&1 | grep 'pattern.*in.*output'",
+# ]
+
+moduleclass = 'devel'
